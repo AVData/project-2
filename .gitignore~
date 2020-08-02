@@ -106,4 +106,3 @@ venv.bak/
 .mypy_cache/
 
 # raw data
-Traffic_Collisions_Data_from_2010_to_Present.csv
