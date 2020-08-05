@@ -106,3 +106,4 @@ venv.bak/
 .mypy_cache/
 
 # raw data
+Traffic_Collision_Data_from_API.csv

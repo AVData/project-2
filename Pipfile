@@ -14,6 +14,8 @@ pandas = "*"
 eli5 = "*"
 pdpbox = "*"
 xgboost = "*"
+python-dotenv = "*"
+sodapy = "*"
 
 [requires]
 python_version = "3"
