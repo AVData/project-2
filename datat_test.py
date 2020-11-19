@@ -1,3 +1,5 @@
+"""."""
+
 import os
 from dotenv import load_dotenv
 import pandas as pd
@@ -26,4 +28,6 @@ results = client.get('d5tf-ez2w', limit=500000)
 
 results_df = pd.DataFrame.from_records(results)
 
-# results_df.to_csv('Traffic_Collision_Data_from_API.csv', index=True, header=True)
+# results_df.to_csv('Traffic_Collision_Data_from_API.csv',
+#                    index=True,
+#                    header=True)

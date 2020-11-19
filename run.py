@@ -1,5 +1,4 @@
-# Imports from 3rd party libraries
-import dash
+"""Imports from 3rd party libraries."""
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
@@ -9,14 +8,21 @@ from dash.dependencies import Input, Output
 from app import app, server
 from pages import index, predictions, insights, process
 
-# Navbar docs: https://dash-bootstrap-components.opensource.faculty.ai/l/components/navbar
+# Navbar docs:
+# https://dash-bootstrap-components.opensource.faculty.ai/l/components/navbar
 navbar = dbc.NavbarSimple(
     brand='YOUR APP NAME',
     brand_href='/',
     children=[
-        dbc.NavItem(dcc.Link('Predictions', href='/predictions', className='nav-link')),
-        dbc.NavItem(dcc.Link('Insights', href='/insights', className='nav-link')),
-        dbc.NavItem(dcc.Link('Process', href='/process', className='nav-link')),
+        dbc.NavItem(dcc.Link('Predictions',
+                             href='/predictions',
+                             className='nav-link')),
+        dbc.NavItem(dcc.Link('Insights',
+                             href='/insights',
+                             className='nav-link')),
+        dbc.NavItem(dcc.Link('Process',
+                             href='/process',
+                             className='nav-link')),
     ],
     sticky='top',
     color='light',
@@ -25,7 +31,10 @@ navbar = dbc.NavbarSimple(
 )
 
 # Footer docs:
-# dbc.Container, dbc.Row, dbc.Col: https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
+# dbc.Container
+# dbc.Row
+# dbc.Col:
+# https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 # html.P: https://dash.plot.ly/dash-html-components
 # fa (font awesome) : https://fontawesome.com/icons/github-square?style=brands
 # mr (margin right) : https://getbootstrap.com/docs/4.3/utilities/spacing/
@@ -36,10 +45,14 @@ footer = dbc.Container(
             html.P(
                 [
                     html.Span('Your Name', className='mr-2'),
-                    html.A(html.I(className='fas fa-envelope-square mr-1'), href='mailto:<you>@<provider>.com'),
-                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/<you>/<repo>'),
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/<you>/'),
-                    html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'),
+                    html.A(html.I(className='fas fa-envelope-square mr-1'),
+                           href='mailto:<you>@<provider>.com'),
+                    html.A(html.I(className='fab fa-github-square mr-1'),
+                           href='https://github.com/<you>/<repo>'),
+                    html.A(html.I(className='fab fa-linkedin mr-1'),
+                           href='https://www.linkedin.com/in/<you>/'),
+                    html.A(html.I(className='fab fa-twitter-square mr-1'),
+                           href='https://twitter.com/<you>'),
                 ],
                 className='lead'
             )
@@ -50,7 +63,8 @@ footer = dbc.Container(
 # Layout docs:
 # html.Div: https://dash.plot.ly/getting-started
 # dcc.Location: https://dash.plot.ly/dash-core-components/location
-# dbc.Container: https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
+# dbc.Container:
+# https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     navbar,
@@ -64,6 +78,7 @@ app.layout = html.Div([
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
+    """Use to display layout for the route."""
     if pathname == '/':
         return index.layout
     elif pathname == '/predictions':
@@ -74,6 +89,7 @@ def display_page(pathname):
         return process.layout
     else:
         return dcc.Markdown('## Page not found')
+
 
 # Run app server: https://dash.plot.ly/getting-started
 if __name__ == '__main__':
