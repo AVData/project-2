@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 
 # Imports from this application
-from app import app
+# from app import app
 
 # 2 column layout. 1st column width = 4/12
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout

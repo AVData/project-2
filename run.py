@@ -1,17 +1,18 @@
 """Imports from 3rd party libraries."""
+
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
 # Imports from this application
-from app import app, server
+from app import app
 from pages import index, predictions, insights, process
 
 # Navbar docs:
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/navbar
 navbar = dbc.NavbarSimple(
-    brand='YOUR APP NAME',
+    brand='Cylinder',
     brand_href='/',
     children=[
         dbc.NavItem(dcc.Link('Predictions',
@@ -44,7 +45,7 @@ footer = dbc.Container(
         dbc.Col(
             html.P(
                 [
-                    html.Span('Your Name', className='mr-2'),
+                    html.Span('Agustin C Vargas', className='mr-1'),
                     html.A(html.I(className='fas fa-envelope-square mr-1'),
                            href='mailto:<you>@<provider>.com'),
                     html.A(html.I(className='fab fa-github-square mr-1'),

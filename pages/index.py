@@ -4,28 +4,19 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import plotly.express as px
 
-# Imports from this application
-from app import app
-
 # 2 column layout. 1st column width = 4/12
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
     [
         dcc.Markdown(
-            """Your Value Proposition
+            """Your Risk Report
 
-            Emphasize how the app will benefit users. Don't emphasize the
-            underlying technology.
-
-            ✅ RUN is a running app that adapts to your fitness levels and
-            designs personalized workouts to help you improve your running.
-
-            ❌ RUN is the only intelligent running app that uses sophisticated
-            deep neural net machine learning to make your run smarter because
-            we believe in ML driven workouts.
+            The Cylinder app provides you a traffic risk report based on you,
+            and how you self identify.  Be safe, for yourself and for those
+            around you.
             """
         ),
-        dcc.Link(dbc.Button('Your Call To Action', color='primary'),
+        dcc.Link(dbc.Button('Get My Report', color='primary'),
                  href='/predictions')
     ],
     md=4,
